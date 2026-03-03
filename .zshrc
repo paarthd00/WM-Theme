@@ -170,3 +170,7 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 # ───────────────────────────────────────────────────────────────────
 [[ -t 1 ]] && command -v neofetch &>/dev/null && neofetch
 [ -f "/home/p/.ghcup/env" ] && . "/home/p/.ghcup/env" # ghcup-env
+
+
+alias dce='docker exec -it $(docker ps --filter "label=devcontainer.local_folder=$(pwd)" -q) bash'
+alias dcup='devcontainer up --workspace-folder . --remove-existing-container --log-level info'
